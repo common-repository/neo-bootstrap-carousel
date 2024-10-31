@@ -1,0 +1,2249 @@
+/*
+Authors: Mohsin Rafique
+Author URI: https://pixelspress.com
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Created on: 26-Feb-2019, 03:08:04
+Updated on: 26-Feb-2019, 12:00:00
+*/
+/*------------------------------------------------------------------------------
+# NEO Boostrap Carousel Admin Dashboard
+--------------------------------------------------------------------------------
+TABLE OF CONTENTS:
+
+# Variables & Mixins
+# Third-Party Libs
+# NEO Bootstrap Carousel Admin Dashboard Wrapper
+	## Components
+		### Typography
+		### Grid
+		### Tables
+		### Accordion
+		### Buttons
+		### Header
+		### Horizontal Tabs
+		### Vertical Tabs (Settings Panel)
+		### Rating Box
+		### Content Wrap
+
+	## Boxes
+		### Box With Num Icon (Used on Welcome Screen)
+		### Box With Icon
+		### Box With Img
+		### Intro Box
+	## Team
+	## Forms
+# Notification
+# NEO Bootstrap Carousel Meta
+# General
+------------------------------------------------------------------------------*/
+.user-select-none,
+.select2-container .select2-selection--single,
+.select2-container .select2-selection--multiple,
+.select2-container .select2-dropdown .select2-results .select2-results__options .select2-results__option {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.clearfix:before,
+.clearfix:after,
+.neo-bootstrap-carousel .row:before,
+.neo-bootstrap-carousel .row:after,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-header:before,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-header:after,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs:before,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs:after,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-header:before,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-header:after,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-footer:before,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-footer:after,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-footer:before,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-footer:after,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-header:before,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-header:after,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-num-icon .neo-bootstrap-carousel-num-icon-title:before,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-num-icon .neo-bootstrap-carousel-num-icon-title:after,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-w-icon:before,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-w-icon:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after,
+.neo-bootstrap-carousel .row:after,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-header:after,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs:after,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-header:after,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-footer:after,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-footer:after,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-header:after,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-num-icon .neo-bootstrap-carousel-num-icon-title:after,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-w-icon:after {
+  clear: both;
+}
+.box-shadow-1,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-table,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-header .neo-bootstrap-carousel-logo,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap {
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.box-shadow-2,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-w-img,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-team .neo-bootstrap-carousel-team-member {
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+.border-box,
+.select2-container,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-table,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-team .neo-bootstrap-carousel-team-member {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.border-box:after,
+.border-box:before,
+.border-box *,
+.border-box *:after,
+.border-box *:before,
+.border-box + .tgl-btn {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/*-------------------------------------------------------------------------------------------
+##  Select2 Select - Custom Styles 
+-------------------------------------------------------------------------------------------*/
+.select2-container {
+  display: inline-block;
+  margin: 0;
+  position: relative;
+  vertical-align: middle;
+  font-size: 14px;
+  width: 100%;
+  max-width: 300px;
+}
+.select2-container .select2-selection--single {
+  cursor: pointer;
+  display: block;
+  height: 32px;
+  background-color: #f9f9f9;
+  border: 1px solid #9f9f9f;
+  border-radius: 3px;
+}
+.select2-container .select2-selection--single .select2-selection__rendered {
+  display: block;
+  padding-left: 8px;
+  padding-right: 20px;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #23282D;
+  line-height: 30px;
+}
+.select2-container .select2-selection--single .select2-selection__clear {
+  position: relative;
+  cursor: pointer;
+  float: right;
+  font-weight: bold;
+}
+.select2-container .select2-selection--single .select2-selection__placeholder {
+  color: #9f9f9f;
+}
+.select2-container .select2-selection--single .select2-selection__arrow {
+  height: 32px;
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 20px;
+}
+.select2-container .select2-selection--single .select2-selection__arrow b {
+  border-color: #9f9f9f transparent transparent transparent;
+  border-style: solid;
+  border-width: 5px 4px 0 4px;
+  height: 0;
+  left: 50%;
+  margin-left: -4px;
+  margin-top: -2px;
+  position: absolute;
+  top: 50%;
+  width: 0;
+}
+.select2-container .select2-selection--multiple {
+  cursor: text;
+  display: block;
+  min-height: 32px;
+  background-color: #f9f9f9;
+  border: 1px solid #9f9f9f;
+  border-radius: 3px;
+}
+.select2-container .select2-selection--multiple .select2-selection__rendered {
+  padding: 0 8px;
+  display: inline-block;
+  list-style: none;
+  overflow: hidden;
+  margin: 0;
+  width: 100%;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.select2-container .select2-selection--multiple .select2-selection__rendered li {
+  list-style: none;
+}
+.select2-container .select2-selection--multiple .select2-selection__placeholder {
+  color: #9f9f9f;
+  margin-top: 5px;
+  float: left;
+}
+.select2-container .select2-selection--multiple .select2-selection__clear {
+  cursor: pointer;
+  float: right;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+.select2-container .select2-selection--multiple .select2-selection__choice {
+  background-color: #0073AA;
+  border: 1px solid #0073AA;
+  color: #fff;
+  border-radius: 3px;
+  cursor: default;
+  float: left;
+  margin-right: 5px;
+  margin-top: 5px;
+  padding: 0 5px;
+  font-size: 12px;
+  line-height: 17px;
+}
+.select2-container .select2-selection--multiple .select2-selection__choice__remove {
+  color: #dddddd;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 2px;
+  position: relative;
+  font-size: 13px;
+}
+.select2-container .select2-selection--multiple .select2-selection__choice__remove:hover {
+  color: #fff;
+}
+.select2-container .select2-search--inline {
+  float: left;
+}
+.select2-container .select2-search--inline .select2-search__field {
+  font-size: 100%;
+  margin-top: 5px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.select2-container .select2-search--dropdown {
+  display: block;
+  padding: 4px;
+}
+.select2-container .select2-search--dropdown .select2-search__field {
+  padding: 4px;
+  width: 100%;
+  border: 1px solid #9f9f9f;
+  border-radius: 3px;
+}
+.select2-container .select2-search--dropdown .select2-search__field:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-color: #0073AA;
+}
+.select2-container .select2-search--dropdown.select2-search--hide {
+  display: none;
+}
+.select2-container .select2-dropdown {
+  background-color: #f9f9f9;
+  border: 1px solid #9f9f9f;
+  border-radius: 3px;
+  display: block;
+  position: absolute;
+  left: -100000px;
+  width: 100%;
+  z-index: 1051;
+  left: 0;
+}
+.select2-container .select2-dropdown.select2-dropdown--above,
+.select2-container .select2-dropdown.select2-dropdown--below {
+  border-color: #0073AA;
+}
+.select2-container .select2-dropdown.select2-dropdown--above {
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.select2-container .select2-dropdown.select2-dropdown--below {
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.select2-container .select2-dropdown .select2-results {
+  display: block;
+}
+.select2-container .select2-dropdown .select2-results .select2-results__options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.select2-container .select2-dropdown .select2-results .select2-results__options .select2-results__option {
+  padding: 6px;
+}
+.select2-container .select2-dropdown .select2-results .select2-results__options .select2-results__option[aria-selected] {
+  cursor: pointer;
+}
+.select2-container .select2-dropdown .select2-results .select2-results__options .select2-results__option[role=group] {
+  padding: 0;
+}
+.select2-container .select2-dropdown .select2-results .select2-results__options .select2-results__option[aria-disabled=true] {
+  color: #aaa;
+}
+.select2-container .select2-dropdown .select2-results .select2-results__options .select2-results__option[aria-selected=true] {
+  background-color: #dddddd;
+}
+.select2-container .select2-dropdown .select2-results .select2-results__options .select2-results__option .select2-results__group {
+  cursor: default;
+  display: block;
+  padding: 6px;
+}
+.select2-container .select2-dropdown .select2-results .select2-results__options .select2-results__option .select2-results__option {
+  padding-left: 14px;
+}
+.select2-container .select2-dropdown .select2-results .select2-results__options .select2-results__option .select2-results__option .select2-results__group {
+  padding-left: 0;
+}
+.select2-container .select2-dropdown .select2-results .select2-results__options .select2-results__option .select2-results__option .select2-results__option {
+  margin-left: -14px;
+  padding-left: 28px;
+}
+.select2-container .select2-dropdown .select2-results .select2-results__options .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-left: -28px;
+  padding-left: 42px;
+}
+.select2-container .select2-dropdown .select2-results .select2-results__options .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-left: -42px;
+  padding-left: 56px;
+}
+.select2-container .select2-dropdown .select2-results .select2-results__options .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-left: -56px;
+  padding-left: 70px;
+}
+.select2-container .select2-dropdown .select2-results .select2-results__options .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-left: -70px;
+  padding-left: 84px;
+}
+.select2-container .select2-dropdown .select2-results .select2-results__options .select2-results__option--highlighted[aria-selected] {
+  background-color: #0073AA;
+  color: #fff;
+}
+.select2-container.select2-container--open .select2-selection--single,
+.select2-container.select2-container--open .select2-selection--multiple {
+  border-color: #0073AA;
+}
+.select2-container.select2-container--open.select2-container--above .select2-selection--single,
+.select2-container.select2-container--open.select2-container--above .select2-selection--multiple {
+  border-top: 0 none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.select2-container.select2-container--open.select2-container--below .select2-selection--single,
+.select2-container.select2-container--open.select2-container--below .select2-selection--multiple {
+  border-bottom: 0 none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.select2-container.select2-container--open .select2-selection--single .select2-selection__arrow b {
+  border-color: transparent transparent #9f9f9f transparent;
+  border-width: 0 4px 5px 4px;
+}
+.select2-container.select2-container--focus .select2-selection--single,
+.select2-container.select2-container--focus .select2-selection--multiple {
+  outline: 0;
+}
+.select2-container.select2-container--disabled .select2-selection--single {
+  background-color: #eeeeee;
+  cursor: default;
+}
+.select2-container.select2-container--disabled .select2-selection--single .select2-selection__clear {
+  display: none;
+}
+.select2-container.select2-container--disabled .select2-selection--multiple {
+  background-color: #eeeeee;
+  cursor: default;
+}
+.select2-container.select2-container--disabled .select2-selection__choice__remove {
+  display: none;
+}
+.select2-container[dir="rtl"] .select2-selection--single .select2-selection__clear {
+  float: left;
+}
+.select2-container[dir="rtl"] .select2-selection--single .select2-selection__arrow {
+  left: 1px;
+  right: auto;
+}
+.select2-container[dir="rtl"] .select2-selection--single .select2-selection__rendered {
+  padding-right: 8px;
+  padding-left: 20px;
+}
+.select2-container[dir="rtl"] .select2-selection--multiple .select2-selection__choice {
+  float: right;
+  margin-left: 5px;
+  margin-right: auto;
+}
+.select2-container[dir="rtl"] .select2-selection--multiple .select2-selection__placeholder {
+  float: right;
+}
+.select2-container[dir="rtl"] .select2-selection--multiple .select2-search--inline {
+  float: right;
+}
+.select2-container[dir="rtl"] .select2-selection--multiple .select2-selection__choice__remove {
+  margin-left: 2px;
+  margin-right: auto;
+}
+.select2-close-mask {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  min-height: 100%;
+  min-width: 100%;
+  height: auto;
+  width: auto;
+  opacity: 0;
+  z-index: 99;
+  background-color: #fff;
+  filter: alpha(opacity=0);
+}
+.select2-hidden-accessible {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  -webkit-clip-path: inset(50%) !important;
+          clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+/*-------------------------------------------------------------------------------------------
+## TipTip CSS
+-------------------------------------------------------------------------------------------*/
+#tiptip_holder {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+}
+#tiptip_holder.tip_top {
+  padding-bottom: 5px;
+}
+#tiptip_holder.tip_bottom {
+  padding-top: 5px;
+}
+#tiptip_holder.tip_right {
+  padding-left: 5px;
+}
+#tiptip_holder.tip_left {
+  padding-right: 5px;
+}
+#tiptip_content {
+  font-size: 11px;
+  color: #fff;
+  text-shadow: 0 0 2px #000;
+  padding: 4px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: #191919;
+  background-color: rgba(25, 25, 25, 0.92);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(transparent), to(#000));
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  box-shadow: 0 0 3px #555;
+  -webkit-box-shadow: 0 0 3px #555;
+  -moz-box-shadow: 0 0 3px #555;
+}
+#tiptip_arrow,
+#tiptip_arrow_inner {
+  position: absolute;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 6px;
+  height: 0;
+  width: 0;
+}
+#tiptip_holder.tip_top #tiptip_arrow {
+  border-top-color: #fff;
+  border-top-color: rgba(255, 255, 255, 0.35);
+}
+#tiptip_holder.tip_bottom #tiptip_arrow {
+  border-bottom-color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.35);
+}
+#tiptip_holder.tip_right #tiptip_arrow {
+  border-right-color: #fff;
+  border-right-color: rgba(255, 255, 255, 0.35);
+}
+#tiptip_holder.tip_left #tiptip_arrow {
+  border-left-color: #fff;
+  border-left-color: rgba(255, 255, 255, 0.35);
+}
+#tiptip_holder.tip_top #tiptip_arrow_inner {
+  margin-top: -7px;
+  margin-left: -6px;
+  border-top-color: #191919;
+  border-top-color: rgba(25, 25, 25, 0.92);
+}
+#tiptip_holder.tip_bottom #tiptip_arrow_inner {
+  margin-top: -5px;
+  margin-left: -6px;
+  border-bottom-color: #191919;
+  border-bottom-color: rgba(25, 25, 25, 0.92);
+}
+#tiptip_holder.tip_right #tiptip_arrow_inner {
+  margin-top: -6px;
+  margin-left: -5px;
+  border-right-color: #191919;
+  border-right-color: rgba(25, 25, 25, 0.92);
+}
+#tiptip_holder.tip_left #tiptip_arrow_inner {
+  margin-top: -6px;
+  margin-left: -7px;
+  border-left-color: #191919;
+  border-left-color: rgba(25, 25, 25, 0.92);
+}
+/* Webkit Hacks  */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  #tiptip_content {
+    padding: 4px 8px 5px 8px;
+    background-color: rgba(45, 45, 45, 0.88);
+  }
+  #tiptip_holder.tip_bottom #tiptip_arrow_inner {
+    border-bottom-color: rgba(45, 45, 45, 0.88);
+  }
+  #tiptip_holder.tip_top #tiptip_arrow_inner {
+    border-top-color: rgba(20, 20, 20, 0.92);
+  }
+}
+.wrap .notice.nbc-notice {
+  margin: 15px 0;
+}
+.neo-bootstrap-carousel {
+  padding-right: 20px;
+  /*-------------------------------------------------------------------------------------------
+## Typography
+-------------------------------------------------------------------------------------------*/
+  /*-------------------------------------------------------------------------------------------
+## Grid
+-------------------------------------------------------------------------------------------*/
+  /*-------------------------------------------------------------------------------------------
+## Tables
+-------------------------------------------------------------------------------------------*/
+  /*-------------------------------------------------------------------------------------------
+## Accordion
+-------------------------------------------------------------------------------------------*/
+  /* Style the buttons that are used to open and close the accordion panel */
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  /* Style the accordion panel. Note: hidden by default */
+  /*-------------------------------------------------------------------------------------------
+## Buttons
+-------------------------------------------------------------------------------------------*/
+  /*-------------------------------------------------------------------------------------------
+## Header
+-------------------------------------------------------------------------------------------*/
+  /*-------------------------------------------------------------------------------------------
+## Horizontal Tabs
+-------------------------------------------------------------------------------------------*/
+  /*-------------------------------------------------------------------------------------------
+## Vertical Tabs (Settings Panel)
+-------------------------------------------------------------------------------------------*/
+  /*-------------------------------------------------------------------------------------------
+## Rating Box
+-------------------------------------------------------------------------------------------*/
+  /*-------------------------------------------------------------------------------------------
+## Content Wrap
+-------------------------------------------------------------------------------------------*/
+  /*-------------------------------------------------------------------------------------------
+## Box
+-------------------------------------------------------------------------------------------*/
+  /*-------------------------------------------------------------------------------------------
+## Box With Num Icon (Used on Welcome Screen)
+-------------------------------------------------------------------------------------------*/
+  /*-------------------------------------------------------------------------------------------
+## Box With Icon 
+-------------------------------------------------------------------------------------------*/
+  /*-------------------------------------------------------------------------------------------
+## Box With Img
+-------------------------------------------------------------------------------------------*/
+  /*-------------------------------------------------------------------------------------------
+## Intro Box
+-------------------------------------------------------------------------------------------*/
+  /*-------------------------------------------------------------------------------------------
+## Team
+-------------------------------------------------------------------------------------------*/
+  /*-------------------------------------------------------------------------------------------
+## Form Table
+-------------------------------------------------------------------------------------------*/
+  /*-------------------------------------------------------------------------------------------
+## Form Table
+-------------------------------------------------------------------------------------------*/
+}
+@media (min-width: 783px) {
+  .neo-bootstrap-carousel {
+    padding-right: 20px;
+  }
+}
+.neo-bootstrap-carousel h1,
+.neo-bootstrap-carousel h2,
+.neo-bootstrap-carousel h3,
+.neo-bootstrap-carousel h4,
+.neo-bootstrap-carousel h5,
+.neo-bootstrap-carousel h6,
+.neo-bootstrap-carousel p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.neo-bootstrap-carousel h1,
+.neo-bootstrap-carousel h2,
+.neo-bootstrap-carousel h3,
+.neo-bootstrap-carousel h4,
+.neo-bootstrap-carousel h5,
+.neo-bootstrap-carousel h6 {
+  line-height: 1.2;
+}
+.neo-bootstrap-carousel p {
+  line-height: 1.3;
+}
+.neo-bootstrap-carousel a {
+  font-weight: 600;
+  -webkit-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.neo-bootstrap-carousel a:hover,
+.neo-bootstrap-carousel a:focus {
+  -webkit-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+.neo-bootstrap-carousel .description {
+  margin-top: 10px;
+  font-style: normal;
+  color: #666;
+}
+.neo-bootstrap-carousel .pre {
+  font-family: monospace;
+}
+.neo-bootstrap-carousel .secondary-link {
+  color: #342f47;
+}
+.neo-bootstrap-carousel .secondary-link:hover,
+.neo-bootstrap-carousel .secondary-link:focus {
+  color: #121119;
+}
+.neo-bootstrap-carousel [class*="col-xs-"],
+.neo-bootstrap-carousel [class*="col-sm-"],
+.neo-bootstrap-carousel [class*="col-md-"],
+.neo-bootstrap-carousel [class*="col-lg-"] {
+  float: left;
+  min-height: 1px;
+  padding: 0 15px;
+}
+.neo-bootstrap-carousel .row {
+  margin: 0 -15px;
+}
+.neo-bootstrap-carousel .container {
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.neo-bootstrap-carousel .col-xs-1 {
+  width: 8.33%;
+}
+.neo-bootstrap-carousel .col-xs-2 {
+  width: 16.66%;
+}
+.neo-bootstrap-carousel .col-xs-3 {
+  width: 25%;
+}
+.neo-bootstrap-carousel .col-xs-4 {
+  width: 33.33%;
+}
+.neo-bootstrap-carousel .col-xs-5 {
+  width: 41.66%;
+}
+.neo-bootstrap-carousel .col-xs-6 {
+  width: 50%;
+}
+.neo-bootstrap-carousel .col-xs-7 {
+  width: 58.33%;
+}
+.neo-bootstrap-carousel .col-xs-8 {
+  width: 66.66%;
+}
+.neo-bootstrap-carousel .col-xs-9 {
+  width: 75%;
+}
+.neo-bootstrap-carousel .col-xs-10 {
+  width: 83.33%;
+}
+.neo-bootstrap-carousel .col-xs-11 {
+  width: 91.66%;
+}
+.neo-bootstrap-carousel .col-xs-12 {
+  width: 100%;
+}
+@media (min-width: 783px) {
+  .neo-bootstrap-carousel .container {
+    max-width: 740px;
+  }
+  .neo-bootstrap-carousel .col-sm-1 {
+    width: 8.33%;
+  }
+  .neo-bootstrap-carousel .col-sm-2 {
+    width: 16.66%;
+  }
+  .neo-bootstrap-carousel .col-sm-3 {
+    width: 25%;
+  }
+  .neo-bootstrap-carousel .col-sm-4 {
+    width: 33.33%;
+  }
+  .neo-bootstrap-carousel .col-sm-5 {
+    width: 41.66%;
+  }
+  .neo-bootstrap-carousel .col-sm-6 {
+    width: 50%;
+  }
+  .neo-bootstrap-carousel .col-sm-7 {
+    width: 58.33%;
+  }
+  .neo-bootstrap-carousel .col-sm-8 {
+    width: 66.66%;
+  }
+  .neo-bootstrap-carousel .col-sm-9 {
+    width: 75%;
+  }
+  .neo-bootstrap-carousel .col-sm-10 {
+    width: 83.33%;
+  }
+  .neo-bootstrap-carousel .col-sm-11 {
+    width: 91.66%;
+  }
+  .neo-bootstrap-carousel .col-sm-12 {
+    width: 100%;
+  }
+}
+@media (min-width: 961px) {
+  .neo-bootstrap-carousel .container {
+    max-width: 940px;
+  }
+  .neo-bootstrap-carousel .col-md-1 {
+    width: 8.33%;
+  }
+  .neo-bootstrap-carousel .col-md-2 {
+    width: 16.66%;
+  }
+  .neo-bootstrap-carousel .col-md-3 {
+    width: 25%;
+  }
+  .neo-bootstrap-carousel .col-md-4 {
+    width: 33.33%;
+  }
+  .neo-bootstrap-carousel .col-md-5 {
+    width: 41.66%;
+  }
+  .neo-bootstrap-carousel .col-md-6 {
+    width: 50%;
+  }
+  .neo-bootstrap-carousel .col-md-7 {
+    width: 58.33%;
+  }
+  .neo-bootstrap-carousel .col-md-8 {
+    width: 66.66%;
+  }
+  .neo-bootstrap-carousel .col-md-9 {
+    width: 75%;
+  }
+  .neo-bootstrap-carousel .col-md-10 {
+    width: 83.33%;
+  }
+  .neo-bootstrap-carousel .col-md-11 {
+    width: 91.66%;
+  }
+  .neo-bootstrap-carousel .col-md-12 {
+    width: 100%;
+  }
+}
+@media (min-width: 1366px) {
+  .neo-bootstrap-carousel .container {
+    max-width: 1200px;
+  }
+  .neo-bootstrap-carousel .col-lg-1 {
+    width: 8.33%;
+  }
+  .neo-bootstrap-carousel .col-lg-2 {
+    width: 16.66%;
+  }
+  .neo-bootstrap-carousel .col-lg-3 {
+    width: 25%;
+  }
+  .neo-bootstrap-carousel .col-lg-4 {
+    width: 33.33%;
+  }
+  .neo-bootstrap-carousel .col-lg-5 {
+    width: 41.66%;
+  }
+  .neo-bootstrap-carousel .col-lg-6 {
+    width: 50%;
+  }
+  .neo-bootstrap-carousel .col-lg-7 {
+    width: 58.33%;
+  }
+  .neo-bootstrap-carousel .col-lg-8 {
+    width: 66.66%;
+  }
+  .neo-bootstrap-carousel .col-lg-9 {
+    width: 75%;
+  }
+  .neo-bootstrap-carousel .col-lg-10 {
+    width: 83.33%;
+  }
+  .neo-bootstrap-carousel .col-lg-11 {
+    width: 91.66%;
+  }
+  .neo-bootstrap-carousel .col-lg-12 {
+    width: 100%;
+  }
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-table {
+  margin-bottom: 20px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-table thead {
+  background: #32373c;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-table thead th {
+  font-weight: 600;
+  color: #eee;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-table tr td {
+  border-bottom: 1px solid #e4e4e4;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-table tr:nth-child(even) {
+  background: #f2f2f2;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-table td mark.yes,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-table th mark.yes {
+  color: #7ad03a;
+  background: transparent;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-table td .red,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-table td mark.error,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-table th .red,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-table th mark.error {
+  background: transparent;
+  color: #a00;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-table td mark.no,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-table th mark.no {
+  background: transparent;
+  color: #999;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-help-table td:first-child {
+  width: 180px;
+  font-weight: 600;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-help-table td.help {
+  width: 50px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-help-table .help_tip i {
+  font-size: 18px;
+  position: relative;
+  top: 1px;
+}
+.neo-bootstrap-carousel .nbc-accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+.neo-bootstrap-carousel .nbc-accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+.neo-bootstrap-carousel .active,
+.neo-bootstrap-carousel .accordion:hover {
+  background-color: #ccc;
+}
+.neo-bootstrap-carousel .active:after {
+  content: '\2212';
+  /* Unicode character for "minus" sign (-) */
+}
+.neo-bootstrap-carousel .panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.2s ease-out;
+  -o-transition: max-height 0.2s ease-out;
+  transition: max-height 0.2s ease-out;
+}
+.neo-bootstrap-carousel .panel p {
+  margin-top: 20px;
+}
+.neo-bootstrap-carousel .button-primary,
+.neo-bootstrap-carousel .button-secondary,
+.neo-bootstrap-carousel .button {
+  text-shadow: none;
+  -webkit-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  font-weight: 600;
+}
+.neo-bootstrap-carousel .button-primary:hover,
+.neo-bootstrap-carousel .button-secondary:hover,
+.neo-bootstrap-carousel .button:hover,
+.neo-bootstrap-carousel .button-primary:focus,
+.neo-bootstrap-carousel .button-secondary:focus,
+.neo-bootstrap-carousel .button:focus {
+  -webkit-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.neo-bootstrap-carousel .button-primary:active,
+.neo-bootstrap-carousel .button-secondary:active,
+.neo-bootstrap-carousel .button:active {
+  -webkit-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  -webkit-transform: translateY(1px);
+      -ms-transform: translateY(1px);
+          transform: translateY(1px);
+  -webkit-box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, 0.5);
+}
+.neo-bootstrap-carousel .button {
+  background: #eeeeee;
+  border: 1px solid #d5d5d5;
+  -webkit-box-shadow: 0 1px 0 #a2a2a2;
+          box-shadow: 0 1px 0 #a2a2a2;
+}
+.neo-bootstrap-carousel .button:hover,
+.neo-bootstrap-carousel .button:focus {
+  background: #e1e1e1;
+  border-color: #d5d5d5;
+  -webkit-box-shadow: 0 1px 0 #d5d5d5;
+          box-shadow: 0 1px 0 #d5d5d5;
+}
+.neo-bootstrap-carousel .button-primary {
+  color: #fff;
+  background: #0073AA;
+  border: 1px solid #005177;
+  -webkit-box-shadow: 0 1px 0 #000c11;
+          box-shadow: 0 1px 0 #000c11;
+}
+.neo-bootstrap-carousel .button-primary:hover,
+.neo-bootstrap-carousel .button-primary:focus {
+  background: #006291;
+  border-color: #005177;
+  -webkit-box-shadow: 0 1px 0 #005177;
+          box-shadow: 0 1px 0 #005177;
+}
+.neo-bootstrap-carousel .button-secondary {
+  color: #fff;
+  background: #342f47;
+  border: 1px solid #1e1b28;
+  -webkit-box-shadow: 0 1px 0 #000000;
+          box-shadow: 0 1px 0 #000000;
+}
+.neo-bootstrap-carousel .button-secondary:hover,
+.neo-bootstrap-carousel .button-secondary:focus {
+  background: #292538;
+  border-color: #1e1b28;
+  -webkit-box-shadow: 0 1px 0 #1e1b28;
+          box-shadow: 0 1px 0 #1e1b28;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-action-buttons a {
+  margin-right: 5px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-header {
+  margin: 15px 0;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-header .neo-bootstrap-carousel-logo,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-header .neo-bootstrap-carousel-title {
+  display: block;
+  float: left;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-header .neo-bootstrap-carousel-logo {
+  background: #342f47;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-header .neo-bootstrap-carousel-logo img {
+  max-width: 100px;
+  height: auto;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-header .neo-bootstrap-carousel-title {
+  vertical-align: top;
+  padding-left: 15px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-header .neo-bootstrap-carousel-title h1 {
+  margin: 7px 0;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-header .neo-bootstrap-carousel-title h3 {
+  margin-bottom: 15px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-header .neo-bootstrap-carousel-version h4 {
+  display: inline-block;
+  margin: 0;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-header .neo-bootstrap-carousel-version h4 strong {
+  font-weight: 700;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  border: 0 none;
+  overflow: auto;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a {
+  color: #555d66;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 100%;
+  display: inline-block;
+  margin: 0;
+  padding: 10px 15px;
+  background: #fff;
+  border: 0 none;
+  border-right: 1px solid #eeeeee;
+  -webkit-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a:last-child {
+  border-right: 0 none;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a > span {
+  display: inline-block;
+  color: #fff;
+  width: 23px;
+  text-align: center;
+  margin-right: 7px;
+  font-weight: 800;
+  font-size: 12px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.nav-tab-active,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a:hover,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a:focus {
+  color: #eee;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.welcome > span {
+  background: #342f47;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.welcome.nav-tab-active,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.welcome:hover,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.welcome:focus {
+  background: #0073AA;
+  color: #fff;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.welcome.nav-tab-active > span,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.welcome:hover > span,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.welcome:focus > span {
+  color: #0073AA;
+  background: #fff;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.sliders > span {
+  background: #630460;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.sliders.nav-tab-active,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.sliders:hover,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.sliders:focus {
+  background: #0073AA;
+  color: #fff;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.sliders.nav-tab-active > span,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.sliders:hover > span,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.sliders:focus > span {
+  color: #0073AA;
+  background: #fff;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.settings > span {
+  background: #20d37e;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.settings.nav-tab-active,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.settings:hover,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.settings:focus {
+  background: #0073AA;
+  color: #fff;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.settings.nav-tab-active > span,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.settings:hover > span,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.settings:focus > span {
+  color: #0073AA;
+  background: #fff;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.help > span {
+  background: #416deb;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.help.nav-tab-active,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.help:hover,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.help:focus {
+  background: #0073AA;
+  color: #fff;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.help.nav-tab-active > span,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.help:hover > span,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.help:focus > span {
+  color: #0073AA;
+  background: #fff;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.system-requirements > span {
+  background: #9f9f9f;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.system-requirements.nav-tab-active,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.system-requirements:hover,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.system-requirements:focus {
+  background: #0073AA;
+  color: #fff;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.system-requirements.nav-tab-active > span,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.system-requirements:hover > span,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.system-requirements:focus > span {
+  color: #0073AA;
+  background: #fff;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.changelog > span {
+  background: #2885bb;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.changelog.nav-tab-active,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.changelog:hover,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.changelog:focus {
+  background: #0073AA;
+  color: #fff;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.changelog.nav-tab-active > span,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.changelog:hover > span,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-htabs a.changelog:focus > span {
+  color: #0073AA;
+  background: #fff;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* Mobile View */
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-sidebar {
+  width: 200px;
+  background: #32373c;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-menu a {
+  background: #23282D;
+  color: #eee;
+  font-size: 14px;
+  line-height: 1.2;
+  padding: 12px;
+  border-bottom: 1px solid #333333;
+  font-weight: 400;
+  text-decoration: none;
+  display: block;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-menu a i,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-menu a span {
+  position: relative;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-menu a i {
+  font-size: 18px;
+  line-height: 14px;
+  margin-right: 7px;
+  top: 1px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-menu a span {
+  top: -2px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-menu a:hover {
+  background: #32373c;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-menu a:focus,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-menu a:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-menu a.active {
+  color: #fff;
+  background: #0073AA;
+  position: relative;
+  border-right: 0 none;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-menu a.active:after {
+  right: -1px;
+  border: 8px solid transparent;
+  border-right-color: transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-right-color: #fff;
+  top: 50%;
+  margin-top: -8px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-menu a:first-child.active:after {
+  border-right-color: #32373c;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap {
+  width: calc(100% - 200px);
+  border-left: 0 none;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-header,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-footer {
+  padding: 8px 15px 9px;
+  background: #32373c;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-header h2,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-footer h2 {
+  color: #eee;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+  margin: 0 15px 0 0;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-header .neo-bootstrap-carousel-vtabs-title,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-footer .neo-bootstrap-carousel-vtabs-title {
+  float: left;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-header .neo-bootstrap-carousel-vtabs-btn-toolbar,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-footer .neo-bootstrap-carousel-vtabs-btn-toolbar {
+  float: right;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-header .neo-bootstrap-carousel-vtabs-btn-toolbar input,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-footer .neo-bootstrap-carousel-vtabs-btn-toolbar input,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-header .neo-bootstrap-carousel-vtabs-btn-toolbar button,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-footer .neo-bootstrap-carousel-vtabs-btn-toolbar button,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-header .neo-bootstrap-carousel-vtabs-btn-toolbar a,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-footer .neo-bootstrap-carousel-vtabs-btn-toolbar a {
+  margin-left: 5px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-header {
+  border-bottom: 1px solid #e4e4e4;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-footer {
+  border-top: 1px solid #e4e4e4;
+  border-left: 1px solid #444;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-body {
+  padding: 20px;
+  background: #fff;
+  min-height: 40vh;
+}
+@media (max-width: 960px) {
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-sidebar {
+    width: 46px;
+  }
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-menu a span {
+    display: none;
+  }
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap {
+    width: calc(100% - 46px);
+  }
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-body {
+    min-height: auto;
+  }
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-header .neo-bootstrap-carousel-vtabs-btn-toolbar {
+    display: none;
+  }
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-footer .neo-bootstrap-carousel-vtabs-title {
+    display: none;
+  }
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-vtabs .neo-bootstrap-carousel-vtabs-content-wrap .neo-bootstrap-carousel-vtabs-footer .neo-bootstrap-carousel-vtabs-btn-toolbar {
+    float: left;
+  }
+}
+@-webkit-keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  to {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  to {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+@-webkit-keyframes wave {
+  from {
+    -webkit-transform: translateY(-10%);
+            transform: translateY(-10%);
+  }
+  to {
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
+  }
+}
+@keyframes wave {
+  from {
+    -webkit-transform: translateY(-10%);
+            transform: translateY(-10%);
+  }
+  to {
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
+  }
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-rating-box {
+  background: #342f47;
+  background-size: cover;
+  border: 0 none;
+  margin: 20px 0;
+  padding: 0;
+  overflow: hidden;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-rating-box a {
+  text-decoration: none;
+  line-height: 1;
+  position: relative;
+  display: block;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-rating-box a .before-img,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-rating-box a .after-img {
+  position: absolute;
+  bottom: -1px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-rating-box a .before-img img,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-rating-box a .after-img img,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-rating-box a .before-img svg,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-rating-box a .after-img svg {
+  max-height: 70px;
+  width: auto;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-rating-box a .before-img {
+  left: 10px;
+  bottom: -10px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-rating-box a .before-img svg {
+  -webkit-animation: wave 1s cubic-bezier(0.45, 0.05, 0.55, 0.95) alternate infinite;
+          animation: wave 1s cubic-bezier(0.45, 0.05, 0.55, 0.95) alternate infinite;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-rating-box a .before-img svg .st0 {
+  fill: #FFFFFF;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-rating-box a .before-img svg .st1 {
+  fill: none;
+  stroke: #FFFFFF;
+  stroke-width: 5.5507;
+  stroke-miterlimit: 10;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-rating-box a .after-img {
+  right: -38px;
+  bottom: -4px;
+}
+@media (max-width: 782px) {
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-rating-box a .after-img {
+    display: none;
+  }
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-rating-box a .after-img svg path {
+  fill: none;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+  stroke-width: 2px;
+  stroke: #fff;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  -webkit-animation: dash 3s cubic-bezier(0.46, 0.03, 0.52, 0.96) alternate infinite;
+          animation: dash 3s cubic-bezier(0.46, 0.03, 0.52, 0.96) alternate infinite;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-rating-box a .inner-content {
+  padding: 15px 0 15px 100px;
+}
+@media (min-width: 783px) {
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-rating-box a .inner-content {
+    padding-right: 120px;
+  }
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-rating-box a .inner-content h3,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-rating-box a .inner-content p {
+  color: #fff;
+  margin: 0;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-rating-box a .inner-content h3 {
+  line-height: 1;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-rating-box a .inner-content p {
+  font-size: 14px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-rating-box a:hover,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-rating-box a:focus,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-rating-box a:active {
+  border: 0 none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-rating-box .notice-dismiss {
+  height: 100%;
+  color: #fff;
+  padding: 15px;
+  font-size: 22px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-rating-box .notice-dismiss:before {
+  color: #fff;
+  font-size: 24px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-star-rating {
+  display: inline-block;
+  color: #ffb900;
+  position: relative;
+  top: 3px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-star-rating svg {
+  fill: #ffb900;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-star-rating svg:hover {
+  fill: #ffb900;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-star-rating svg:hover ~ svg {
+  fill: none;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap {
+  background: #fff;
+  /* Mobile View */
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-body {
+  padding: 15px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap p {
+  margin-bottom: 20px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-footer,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-header {
+  background: #32373c;
+  padding: 8px 15px 9px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-footer h2,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-header h2,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-footer h3,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-header h3 {
+  color: #eee;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26px;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  margin: 0;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-footer .neo-bootstrap-carousel-content-title,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-header .neo-bootstrap-carousel-content-title {
+  float: left;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-footer .neo-bootstrap-carousel-content-btn-toolbar,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-header .neo-bootstrap-carousel-content-btn-toolbar {
+  float: right;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-footer .neo-bootstrap-carousel-content-btn-toolbar input,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-header .neo-bootstrap-carousel-content-btn-toolbar input,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-footer .neo-bootstrap-carousel-content-btn-toolbar button,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-header .neo-bootstrap-carousel-content-btn-toolbar button,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-footer .neo-bootstrap-carousel-content-btn-toolbar a,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-header .neo-bootstrap-carousel-content-btn-toolbar a {
+  margin-left: 5px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-header {
+  border-bottom: 1px solid #e4e4e4;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-footer {
+  border-top: 1px solid #e4e4e4;
+  border-left: 1px solid #444;
+}
+@media (max-width: 960px) {
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-header .neo-bootstrap-carousel-content-btn-toolbar {
+    display: none;
+  }
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-footer .neo-bootstrap-carousel-content-title {
+    display: none;
+  }
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-content-wrap .neo-bootstrap-carousel-content-footer .neo-bootstrap-carousel-content-btn-toolbar {
+    float: left;
+  }
+}
+.neo-bootstrap-carousel #debug-report {
+  display: none;
+}
+.neo-bootstrap-carousel #debug-report textarea {
+  font-family: monospace;
+  width: 100%;
+  margin: 0;
+  height: 300px;
+  padding: 20px;
+  border-radius: 0;
+  resize: none;
+  font-size: 12px;
+  line-height: 20px;
+  outline: 0;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box {
+  padding: 20px 25px 25px 25px;
+  margin: 10px;
+  border: 0 none;
+  background: #f2f2f2;
+  width: 100%;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box h2,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box h3 {
+  color: #555d66;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box p {
+  font-size: 13px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box.alert-box {
+  margin: 0 0 20px 0;
+  background: #fff;
+  border-left: 5px solid #2885bb;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box.alert-box h3 {
+  text-transform: uppercase;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box.alert-box p {
+  margin: 0;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-boxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  margin: 0 -10px;
+}
+@media (min-width: 500px) {
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-boxes.neo-bootstrap-carousel-boxes-2-col .neo-bootstrap-carousel-box {
+    width: calc(50% -  20px);
+  }
+}
+@media (min-width: 500px) {
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-boxes.neo-bootstrap-carousel-boxes-3-col .neo-bootstrap-carousel-box {
+    width: calc(50% -  20px);
+  }
+}
+@media (min-width: 1200px) {
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-boxes.neo-bootstrap-carousel-boxes-3-col .neo-bootstrap-carousel-box {
+    width: calc(33.33% -  20px);
+  }
+}
+@media (min-width: 500px) {
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-boxes.neo-bootstrap-carousel-boxes-4-col .neo-bootstrap-carousel-box {
+    width: calc(50% -  20px);
+  }
+}
+@media (min-width: 783px) {
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-boxes.neo-bootstrap-carousel-boxes-4-col .neo-bootstrap-carousel-box {
+    width: calc(33.33% -  20px);
+  }
+}
+@media (min-width: 1200px) {
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-boxes.neo-bootstrap-carousel-boxes-4-col .neo-bootstrap-carousel-box {
+    width: calc(25% -  20px);
+  }
+}
+@media (min-width: 500px) {
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-boxes.neo-bootstrap-carousel-boxes-6-col .neo-bootstrap-carousel-box {
+    width: calc(50% -  20px);
+  }
+}
+@media (min-width: 783px) {
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-boxes.neo-bootstrap-carousel-boxes-6-col .neo-bootstrap-carousel-box {
+    width: calc(33.33% -  20px);
+  }
+}
+@media (min-width: 1200px) {
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-boxes.neo-bootstrap-carousel-boxes-6-col .neo-bootstrap-carousel-box {
+    width: calc(25% -  20px);
+  }
+}
+@media (min-width: 1400px) {
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-boxes.neo-bootstrap-carousel-boxes-6-col .neo-bootstrap-carousel-box {
+    width: calc(20% -  20px);
+  }
+}
+@media (min-width: 1600px) {
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-boxes.neo-bootstrap-carousel-boxes-6-col .neo-bootstrap-carousel-box {
+    width: calc(16.66% -  20px);
+  }
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-num-icon img {
+  max-height: 49px;
+  width: auto;
+  margin-bottom: 15px;
+}
+@media (max-width: 782px) {
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-box-num-icon h2 {
+    color: #555d66;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-num-icon .neo-bootstrap-carousel-num-icon-title {
+  margin-bottom: 10px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-num-icon .neo-bootstrap-carousel-num-icon-title .neo-bootstrap-carousel-num,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-num-icon .neo-bootstrap-carousel-num-icon-title .neo-bootstrap-carousel-icon-title {
+  display: block;
+  float: left;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-num-icon .neo-bootstrap-carousel-num-icon-title .neo-bootstrap-carousel-num {
+  font-size: 50px;
+  line-height: 44px;
+  font-weight: 600;
+  display: inline-block;
+  opacity: 0.15;
+  width: 25px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-num-icon .neo-bootstrap-carousel-num-icon-title .neo-bootstrap-carousel-icon-title {
+  width: calc(100% - 45px);
+  margin-left: 20px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-num-icon .neo-bootstrap-carousel-num-icon-title .neo-bootstrap-carousel-icon-title img {
+  margin-bottom: 10px;
+}
+@media (min-width: 1200px) {
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-box-num-icon .neo-bootstrap-carousel-num-icon-title .neo-bootstrap-carousel-num {
+    font-size: 90px;
+    font-weight: 400;
+    line-height: 1;
+    width: 30px;
+  }
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-box-num-icon .neo-bootstrap-carousel-num-icon-title .neo-bootstrap-carousel-icon-title {
+    width: calc(100% - 60px);
+    margin-left: 30px;
+  }
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-num-icon .neo-bootstrap-carousel-num,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-num-icon span {
+  font-size: 100px;
+  line-height: 18px;
+  height: 20px;
+  width: 18px;
+  font-weight: 200;
+  display: inline-block;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-w-icon h3,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-w-icon p {
+  margin-bottom: 0;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-w-icon .neo-bootstrap-carousel-box-icon {
+  border-bottom: 1px solid #e4e4e4;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-w-icon .neo-bootstrap-carousel-box-icon img {
+  max-width: 40px;
+  margin-bottom: 5px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-w-img {
+  padding: 0;
+  border-radius: 3px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-w-img img {
+  border-top: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-w-img .neo-bootstrap-carousel-box-header {
+  padding: 15px 20px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-w-img .neo-bootstrap-carousel-box-header h2,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-w-img .neo-bootstrap-carousel-box-header h3 {
+  margin: 0;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-w-img .neo-bootstrap-carousel-box-body {
+  padding: 13px 20px 20px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-w-img .neo-bootstrap-carousel-box-body p {
+  font-size: 14px;
+  margin: 0;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-w-img.gray-scale img {
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-box-w-img.gray-scale:hover img {
+  -webkit-filter: none;
+          filter: none;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-intro-box {
+  padding: 35px 30px 40px 30px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-intro-box h2 {
+  font-size: 20px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-intro-box p {
+  font-size: 16px;
+  margin: 0;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-team .neo-bootstrap-carousel-team-member {
+  color: #555d66;
+  display: inline-block;
+  background: #f9f9f9;
+  text-decoration: none;
+  vertical-align: top;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-team .neo-bootstrap-carousel-team-member:hover {
+  background: #342f47;
+  color: #fff;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-team .neo-bootstrap-carousel-team-member .neo-bootstrap-carousel-member-info,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-team .neo-bootstrap-carousel-team-member img {
+  display: inline-block;
+  vertical-align: middle;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-team .neo-bootstrap-carousel-team-member .neo-bootstrap-carousel-member-info {
+  padding: 10px 15px 15px 10px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-team .neo-bootstrap-carousel-team-member h4,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-team .neo-bootstrap-carousel-team-member p {
+  line-height: 1;
+  margin: 0;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-team .neo-bootstrap-carousel-team-member h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-section-title {
+  margin: 0;
+  padding: 10px;
+  border: 1px solid #eeeeee;
+  background: #f2f2f2;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  color: #555d66;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table {
+  margin: 0 0 40px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table:last-child {
+  margin: 0;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table tr {
+  border-top: 1px solid #eeeeee;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table th {
+  padding: 10px 10px 5px;
+  line-height: 22px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table td {
+  padding: 0 10px 15px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table .neo-bootstrap-carousel-form-field-desc {
+  margin-top: 20px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table .neo-bootstrap-carousel-form-field-desc p {
+  margin-bottom: 15px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table .neo-bootstrap-carousel-form-field-desc p:last-child {
+  margin: 0;
+}
+@media (min-width: 783px) {
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-form-table th,
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-form-table td {
+    padding: 20px 10px;
+  }
+  .neo-bootstrap-carousel .neo-bootstrap-carousel-form-table th {
+    width: 240px;
+  }
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table {
+  /*-------------------------------------------------------------------------------------------
+## Inputs
+-------------------------------------------------------------------------------------------*/
+  /*-------------------------------------------------------------------------------------------
+## Switches
+-------------------------------------------------------------------------------------------*/
+  /*-------------------------------------------------------------------------------------------
+## Parent Child Field
+-------------------------------------------------------------------------------------------*/
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="text"],
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="url"],
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="number"],
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table textarea {
+  font-size: 14px;
+  line-height: 1;
+  padding: 9px;
+  border: 1px solid #9f9f9f;
+  border-radius: 3px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  width: 100%;
+  max-width: 300px;
+  background: #f9f9f9;
+  position: relative;
+  min-height: 32px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="text"]::-webkit-input-placeholder, .neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="url"]::-webkit-input-placeholder, .neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="number"]::-webkit-input-placeholder, .neo-bootstrap-carousel .neo-bootstrap-carousel-form-table textarea::-webkit-input-placeholder {
+  color: #9f9f9f;
+  opacity: 1;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="text"]::-moz-placeholder, .neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="url"]::-moz-placeholder, .neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="number"]::-moz-placeholder, .neo-bootstrap-carousel .neo-bootstrap-carousel-form-table textarea::-moz-placeholder {
+  color: #9f9f9f;
+  opacity: 1;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="text"]:-ms-input-placeholder, .neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="url"]:-ms-input-placeholder, .neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="number"]:-ms-input-placeholder, .neo-bootstrap-carousel .neo-bootstrap-carousel-form-table textarea:-ms-input-placeholder {
+  color: #9f9f9f;
+  opacity: 1;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="text"]::-ms-input-placeholder, .neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="url"]::-ms-input-placeholder, .neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="number"]::-ms-input-placeholder, .neo-bootstrap-carousel .neo-bootstrap-carousel-form-table textarea::-ms-input-placeholder {
+  color: #9f9f9f;
+  opacity: 1;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="text"]::placeholder,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="url"]::placeholder,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="number"]::placeholder,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table textarea::placeholder {
+  color: #9f9f9f;
+  opacity: 1;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="text"]:-ms-input-placeholder,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="url"]:-ms-input-placeholder,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="number"]:-ms-input-placeholder,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table textarea:-ms-input-placeholder {
+  color: #9f9f9f;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="text"]::-ms-input-placeholder,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="url"]::-ms-input-placeholder,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="number"]::-ms-input-placeholder,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table textarea::-ms-input-placeholder {
+  color: #9f9f9f;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="text"]:focus,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="url"]:focus,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="number"]:focus,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table textarea:focus,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="text"]:active,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="url"]:active,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table input[type="number"]:active,
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table textarea:active {
+  border-color: #0073AA;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table textarea {
+  max-width: 100%;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table .switch {
+  display: inline-block;
+  position: relative;
+  top: 1px;
+  font-size: 16px;
+  line-height: 24px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table .switch input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 30px;
+  opacity: 0;
+  z-index: 0;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table .switch label {
+  display: block;
+  padding: 0 0 0 44px;
+  cursor: pointer;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table .switch label:before {
+  content: '';
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 36px;
+  height: 14px;
+  background-color: rgba(159, 159, 159, 0.8);
+  border-radius: 14px;
+  z-index: 1;
+  -webkit-transition: background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition: background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table .switch label:after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 14px;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  z-index: 2;
+  -webkit-transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-property: left, background-color;
+  -o-transition-property: left, background-color;
+  transition-property: left, background-color;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table .switch input:checked + label:after {
+  left: 16px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table .switch input:checked + label:before {
+  background-color: rgba(0, 115, 170, 0.6);
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table .switch input:checked + label:after {
+  background-color: #0073AA;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table .amp-wp-parent-child-field .amp-wp-child-field {
+  max-height: 0;
+  margin-bottom: 10px;
+  overflow: hidden;
+  -webkit-transition: max-height 0.2s ease-out;
+  -o-transition: max-height 0.2s ease-out;
+  transition: max-height 0.2s ease-out;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table .amp-wp-parent-child-field .amp-wp-child-field label {
+  font-weight: 600;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 7px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table .amp-wp-parent-child-field .amp-wp-child-field input {
+  margin-bottom: 10px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table .amp-wp-parent-child-field .amp-wp-child-field .amp-wp-form-field-desc {
+  margin-top: 0;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table .amp-wp-parent-child-field .amp-wp-child-field .amp-wp-field-error-msg {
+  margin-top: 10px;
+  color: #ef5228;
+  font-weight: 600;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table .amp-wp-parent-child-field .amp-wp-child-field .switch label {
+  margin: 0 0 3px;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table .amp-wp-parent-child-field.active .amp-wp-child-field {
+  max-height: 1000px;
+  -webkit-transition: max-height 0.2s ease-in;
+  -o-transition: max-height 0.2s ease-in;
+  transition: max-height 0.2s ease-in;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table .amp-wp-parent-child-field.error-field .amp-wp-child-field label {
+  color: #ef5228;
+}
+.neo-bootstrap-carousel .neo-bootstrap-carousel-form-table .amp-wp-parent-child-field.error-field .amp-wp-child-field input {
+  border-color: #ef5228;
+}
+/*-------------------------------------------------------------------------------------------
+## Notification
+-------------------------------------------------------------------------------------------*/
+#nbc-notifications * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#nbc-notifications {
+  position: fixed;
+  z-index: 9999999;
+  overflow: hidden;
+  right: 0.5rem;
+  bottom: 0.5rem;
+}
+.nbc-notification {
+  cursor: pointer;
+  min-width: 250px;
+  min-height: 56px;
+  background: #de6826;
+  border-left: 5px solid #c75727;
+  margin: 0.5rem 0 0;
+  padding: 0.5rem;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 5px 0px #5cb85c;
+          box-shadow: 0 0 5px 0px #5cb85c;
+}
+.nbc-notification:hover {
+  background: #c75727;
+}
+.nbc-notification.finished {
+  position: relative;
+  right: 0;
+  -webkit-animation: slide-right 0.5s forwards;
+  animation: slide-right 0.5s forwards;
+}
+.nbc-notification.has-image .nbc-notification-content {
+  width: 150px;
+  float: left;
+}
+.nbc-notification.has-image .img {
+  width: 56px;
+  height: 56px;
+  overflow: hidden;
+  float: right;
+  border: 3px solid #ff7f47;
+  margin-left: 1rem;
+}
+.nbc-notification .img img {
+  width: auto;
+  display: block;
+}
+.nbc-notification h3 {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.4);
+}
+.nbc-notification p {
+  margin: 0 0 0 0.1rem;
+  color: #f0f0f0;
+}
+.nbc-notification.is-success {
+  background: #5cb85c;
+  border-left: 5px solid #4cae4c;
+}
+.nbc-notification.is-success.has-image .img {
+  border: 3px solid #4cae4c;
+}
+.nbc-notification.is-success:hover {
+  background: #4cae4c;
+}
+.nbc-notification.is-success h3 {
+  color: #fff;
+}
+@-webkit-keyframes slide-right {
+  100% {
+    right: -250px;
+  }
+}
+@keyframes slide-right {
+  100% {
+    right: -250px;
+  }
+}
+/*-------------------------------------------------------------------------------------------
+## NEO Bootstrap Carousel Meta
+-------------------------------------------------------------------------------------------*/
+.add-slide {
+  padding: 15px 1px 12px;
+}
+.slide-source-wrapper {
+  margin-right: 15px;
+  display: inline-block;
+}
+.slide-source-wrapper .slide_source {
+  margin: 2px 0 0;
+}
+/* Slider Inline & Close Icons */
+#nbc-slider-container,
+#nbc-post-container {
+  width: 100%;
+}
+#nbc-slider-container ul,
+#nbc-post-container ul {
+  overflow: hidden;
+}
+#nbc-slider-container ul li,
+#nbc-post-container ul li {
+  list-style: none;
+  position: relative;
+  padding: 15px;
+  width: 96%;
+  display: inline-block;
+  border: 1px solid #eee;
+  margin-bottom: 15px;
+}
+#nbc-slider-container ul li table,
+#nbc-post-container ul li table {
+  width: 100%;
+}
+#nbc-slider-container ul li table tbody tr,
+#nbc-post-container ul li table tbody tr {
+  border: none;
+}
+#nbc-slider-container ul li table tbody tr td,
+#nbc-post-container ul li table tbody tr td {
+  width: 20%;
+  vertical-align: top;
+}
+#nbc-slider-container ul li table tbody tr td:nth-child(2),
+#nbc-post-container ul li table tbody tr td:nth-child(2) {
+  width: 80%;
+}
+#nbc-slider-container ul li table tbody tr td:nth-child(2) input,
+#nbc-post-container ul li table tbody tr td:nth-child(2) input,
+#nbc-slider-container ul li table tbody tr td:nth-child(2) textarea,
+#nbc-post-container ul li table tbody tr td:nth-child(2) textarea {
+  width: 100%;
+}
+#nbc-slider-container ul li table tbody tr td.slide-thumbnail img,
+#nbc-post-container ul li table tbody tr td.slide-thumbnail img {
+  max-width: 230px;
+}
+@media (max-width: 768px) {
+  #nbc-slider-container ul li table tbody tr td,
+  #nbc-post-container ul li table tbody tr td {
+    width: 100%;
+    display: block;
+  }
+  #nbc-slider-container ul li table tbody tr td:nth-child(2),
+  #nbc-post-container ul li table tbody tr td:nth-child(2) {
+    width: 95%;
+  }
+}
+#nbc-slider-container ul li table tbody tr td label,
+#nbc-post-container ul li table tbody tr td label {
+  font-weight: 600;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 7px;
+}
+#nbc-slider-container ul li table tbody tr td label:first-child,
+#nbc-post-container ul li table tbody tr td label:first-child {
+  margin-top: 0;
+}
+#nbc-slider-container .delete,
+#nbc-post-container .delete {
+  position: absolute;
+  top: 2px;
+  right: 6px;
+  color: #a00;
+}
+#nbc-slider-container .delete:hover,
+#nbc-post-container .delete:hover {
+  color: red;
+}
+/*-------------------------------------------------------------------------------------------
+## General
+-------------------------------------------------------------------------------------------*/
+.neo-bootstrap-carousel {
+  padding-right: 10px;
+}
+.neo-bootstrap-carousel .mt-10 {
+  margin-top: 10px;
+}
+.neo-bootstrap-carousel .mt-20 {
+  margin-top: 20px;
+}
+.neo-bootstrap-carousel .mt-30 {
+  margin-top: 30px;
+}
+.neo-bootstrap-carousel .mb-10 {
+  margin-bottom: 10px;
+}
+.neo-bootstrap-carousel .mb-20 {
+  margin-bottom: 20px;
+}
+.neo-bootstrap-carousel .mb-30 {
+  margin-bottom: 30px;
+}
+.neo-bootstrap-carousel hr.neo-bootstrap-carousel-section-sep {
+  margin: 20px 0;
+}
+@media (min-width: 783px) {
+  .neo-bootstrap-carousel {
+    padding-right: 20px;
+  }
+}
+.postbox .inside .nbc-entire {
+  color: #dddddd;
+  line-height: 15px;
+}
+.postbox .inside .nbc-entire .nbc-shortcode {
+  color: #630460;
+  cursor: pointer;
+  display: inline;
+  white-space: normal;
+}
+#copyright a {
+  text-decoration: none;
+  color: #19b98a;
+}
+#copyright a img {
+  vertical-align: middle;
+}
+.slider-source-show {
+  display: block;
+}
+.slider-source-hide {
+  display: none;
+}

@@ -1,0 +1,764 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: NEO Bootstrap Carousel\n"
+"POT-Creation-Date: 2020-04-30 05:56+0500\n"
+"PO-Revision-Date: 2020-04-30 05:55+0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: neo-bootstrap-carousel.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: admin/class-neo-bootstrap-carousel-admin.php:103
+msgid "Success"
+msgstr ""
+
+#: admin/class-neo-bootstrap-carousel-admin.php:104
+msgid "Item was copied to your clipboard"
+msgstr ""
+
+#: admin/class-neo-bootstrap-carousel-admin.php:130
+#: admin/partials/neo-bootstrap-carousel-header.php:28
+#: includes/admin/class-neo-bootstrap-carousel-settings.php:59
+#: includes/admin/class-neo-bootstrap-carousel-settings.php:60
+msgid "Settings"
+msgstr ""
+
+#: admin/class-neo-bootstrap-carousel-admin.php:147
+msgid "Share The Love!"
+msgstr ""
+
+#: admin/partials/meta-box/neo-bootstrap-carousel-display.php:16
+msgid "Choose Slide Source:"
+msgstr ""
+
+#: admin/partials/meta-box/neo-bootstrap-carousel-display.php:19
+msgid "Media"
+msgstr ""
+
+#: admin/partials/meta-box/neo-bootstrap-carousel-display.php:23
+msgid "Posts"
+msgstr ""
+
+#: admin/partials/meta-box/neo-bootstrap-carousel-display.php:28
+msgid "Add Slide to Slider"
+msgstr ""
+
+#: admin/partials/meta-box/neo-bootstrap-carousel-display.php:28
+msgid "Add to Slider"
+msgstr ""
+
+#: admin/partials/meta-box/neo-bootstrap-carousel-display.php:28
+#: admin/partials/meta-box/neo-bootstrap-carousel-media-display.php:91
+msgid "Delete Slide"
+msgstr ""
+
+#: admin/partials/meta-box/neo-bootstrap-carousel-display.php:28
+msgid "Delete"
+msgstr ""
+
+#: admin/partials/meta-box/neo-bootstrap-carousel-display.php:37
+msgid "Post to Show"
+msgstr ""
+
+#: admin/partials/meta-box/neo-bootstrap-carousel-display.php:40
+msgid "Most Recent"
+msgstr ""
+
+#: admin/partials/meta-box/neo-bootstrap-carousel-media-display.php:48
+#: admin/partials/meta-box/neo-bootstrap-carousel-post-display.php:65
+msgid "Title"
+msgstr ""
+
+#: admin/partials/meta-box/neo-bootstrap-carousel-media-display.php:51
+#: admin/partials/meta-box/neo-bootstrap-carousel-post-display.php:68
+msgid "Description"
+msgstr ""
+
+#: admin/partials/meta-box/neo-bootstrap-carousel-media-display.php:54
+msgid "URL"
+msgstr ""
+
+#: admin/partials/meta-box/neo-bootstrap-carousel-media-display.php:57
+#: admin/partials/meta-box/neo-bootstrap-carousel-post-display.php:71
+msgid "Overlay"
+msgstr ""
+
+#: admin/partials/meta-box/neo-bootstrap-carousel-media-display.php:59
+#: admin/partials/meta-box/neo-bootstrap-carousel-post-display.php:73
+#: includes/admin/settings/class-neo-bootstrap-carousel-design.php:79
+msgid "None"
+msgstr ""
+
+#: admin/partials/meta-box/neo-bootstrap-carousel-media-display.php:60
+#: admin/partials/meta-box/neo-bootstrap-carousel-post-display.php:74
+msgid "Dark"
+msgstr ""
+
+#: admin/partials/meta-box/neo-bootstrap-carousel-media-display.php:61
+#: admin/partials/meta-box/neo-bootstrap-carousel-post-display.php:75
+msgid "Light"
+msgstr ""
+
+#: admin/partials/meta-box/neo-bootstrap-carousel-media-display.php:64
+#: admin/partials/meta-box/neo-bootstrap-carousel-post-display.php:78
+msgid "Overlay Opacity"
+msgstr ""
+
+#: admin/partials/meta-box/neo-bootstrap-carousel-media-display.php:91
+msgid "X"
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-changelog.php:15
+#: admin/partials/neo-bootstrap-carousel-header.php:55
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:45
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:46
+msgid "Changelog"
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-header.php:16
+#: includes/admin/class-neo-bootstrap-carousel-welcome.php:54
+#: includes/admin/class-neo-bootstrap-carousel-welcome.php:55
+msgid "Welcome"
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-header.php:22
+#: includes/class-neo-bootstrap-carousel-post-type.php:65
+msgid "Sliders"
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-header.php:43
+#: admin/partials/neo-bootstrap-carousel-help.php:17
+#: admin/partials/neo-bootstrap-carousel-help.php:53
+#: includes/admin/class-neo-bootstrap-carousel-help.php:45
+#: includes/admin/class-neo-bootstrap-carousel-help.php:46
+msgid "Help"
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-header.php:49
+#: admin/partials/neo-bootstrap-carousel-system-requirements.php:15
+#: admin/partials/neo-bootstrap-carousel-system-requirements.php:89
+msgid "System Requirements"
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-header.php:74
+msgid "Installed: "
+msgstr ""
+
+#. translators: %s: Installed Plugin Version Number.
+#. translators: %s: Latest Plugin Version Number.
+#: admin/partials/neo-bootstrap-carousel-header.php:79
+#: admin/partials/neo-bootstrap-carousel-header.php:92
+#, php-format
+msgid "v%s"
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-header.php:85
+msgid "|"
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-header.php:87
+msgid "Latest: "
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-header.php:98
+msgid "Update(s) available!"
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-help.php:21
+msgid "Is NEO Bootstrap Carousel responsive?"
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-help.php:23
+msgid ""
+"Yes, the NEO Bootstrap Carousel is responsive and displays resized image for "
+"the mobile devices and tablets."
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-help.php:26
+msgid "How to add a Carousel?"
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-help.php:28
+msgid ""
+"In your WordPress admin panel, go to \"NEO Bootstrap Carousel\" from menu "
+"and add a new carousel. All the NEO Bootstrap Carousel lists will be shown."
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-help.php:31
+msgid "Can I add Carousel into the theme in a custom location?"
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-help.php:33
+msgid ""
+"Yes, that's possible to achieve. The plugin automatically generates a "
+"shortcode for each carousel, thus you can copy and paste the shortcode for "
+"the carousel to a custom location. The shortcode is listed next to the "
+"slider published date in NEO Bootstrao Carousel > Sliders section."
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-help.php:36
+msgid "How to show carousel on the front-end?"
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-help.php:38
+msgid ""
+"For operational slider, add [neo_carousel_shortcode id=”put post id here”] "
+"shortcode in an existing page or add a new page and write shortcode anywhere "
+"in the page editor."
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-help.php:41
+msgid ""
+"How can you change the order of images (slides) within NEO Bootstrap "
+"Carousel?"
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-help.php:43
+msgid ""
+"NEO Bootstrap Carousel uses easy drag feature. This allows to order the "
+"slides for each slider from the back end"
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-help.php:46
+msgid "How do I report bugs and suggest new features?"
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-help.php:48
+msgid "Yes, you can report bugs/suggestions via email support@pixelspress.com"
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-rating-box.php:40
+msgid "Share the Love!"
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-rating-box.php:41
+msgid ""
+"Like our plugin? Please click here and leave us a 5-star feedback to make us "
+"happy and motivated to work on more cool features."
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-system-requirements.php:23
+msgid "Uploads folder writable:"
+msgstr ""
+
+#. translators: %1$s: Modify File Permission Article URL.
+#: admin/partials/neo-bootstrap-carousel-system-requirements.php:29
+#, php-format
+msgid ""
+"wp-content's \"uploads\" directory folder should have its permissions set to "
+"\"755\". This can be done using an FTP program along with these <a href="
+"\"%1$s\">instructions</a>."
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-system-requirements.php:39
+msgid "Memory Limit"
+msgstr ""
+
+#. translators: %1$s: Increasing memory allocated to PHP Article URL.
+#: admin/partials/neo-bootstrap-carousel-system-requirements.php:45
+#, php-format
+msgid ""
+"Default WordPress Memory eseful for the plugin's admin to work smoothly. "
+"Memory can be increased by <a href=\"%1$s\">editing your \"wp-config.php\" "
+"file</a>."
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-system-requirements.php:52
+#: admin/partials/neo-bootstrap-carousel-system-requirements.php:68
+#: admin/partials/neo-bootstrap-carousel-system-requirements.php:74
+msgid "Currently:"
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-system-requirements.php:55
+msgid "Upload Max. Filesize"
+msgstr ""
+
+#. translators: %1$s: Maximum allowed size for uploaded files article URL.
+#: admin/partials/neo-bootstrap-carousel-system-requirements.php:61
+#, php-format
+msgid ""
+"Important for the ability to upload large image files, and also import "
+"templates. <a href=\"%1$s\">Click here</a> to learn how this can be "
+"increased.."
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-system-requirements.php:71
+msgid "Max. Post Size"
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-system-requirements.php:77
+msgid "Contact WordPress Server"
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-system-requirements.php:79
+msgid ""
+"Outbound communications (i.e. \"dialing out\") to the following urls are "
+"necessary for automatic updates."
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-welcome.php:15
+msgid "Getting Started"
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-welcome.php:19
+msgid "Thank you for installing our plugin."
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-welcome.php:20
+msgid "Please complete the following steps to configure the plugin:"
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-welcome.php:58
+msgid "Credits"
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-welcome.php:62
+msgid "NEO Bootstrap Carousel was developed with ❤ by PixelsPress."
+msgstr ""
+
+#: admin/partials/neo-bootstrap-carousel-welcome.php:66
+msgid "Project Leader"
+msgstr ""
+
+#: admin/partials/settings/neo-bootstrap-carousel-advanced.php:21
+#: admin/partials/settings/neo-bootstrap-carousel-advanced.php:47
+msgid "Advanced Settings"
+msgstr ""
+
+#: admin/partials/settings/neo-bootstrap-carousel-advanced.php:24
+#: admin/partials/settings/neo-bootstrap-carousel-advanced.php:50
+#: admin/partials/settings/neo-bootstrap-carousel-design.php:23
+#: admin/partials/settings/neo-bootstrap-carousel-design.php:64
+#: admin/partials/settings/neo-bootstrap-carousel-general.php:23
+#: admin/partials/settings/neo-bootstrap-carousel-general.php:74
+msgid "Save Changes"
+msgstr ""
+
+#: admin/partials/settings/neo-bootstrap-carousel-advanced.php:28
+msgid "Visibility"
+msgstr ""
+
+#: admin/partials/settings/neo-bootstrap-carousel-advanced.php:32
+msgid "Show Content On Mobile"
+msgstr ""
+
+#: admin/partials/settings/neo-bootstrap-carousel-advanced.php:36
+#: admin/partials/settings/neo-bootstrap-carousel-general.php:35
+#: admin/partials/settings/neo-bootstrap-carousel-general.php:50
+#: admin/partials/settings/neo-bootstrap-carousel-general.php:60
+msgid "&nbsp;"
+msgstr ""
+
+#: admin/partials/settings/neo-bootstrap-carousel-advanced.php:37
+msgid "This setting will turn on and off the caption in mobile."
+msgstr ""
+
+#: admin/partials/settings/neo-bootstrap-carousel-design.php:20
+#: admin/partials/settings/neo-bootstrap-carousel-design.php:61
+#: includes/admin/class-neo-bootstrap-carousel-welcome.php:91
+msgid "Design Settings"
+msgstr ""
+
+#: admin/partials/settings/neo-bootstrap-carousel-design.php:27
+msgid "Animation"
+msgstr ""
+
+#: admin/partials/settings/neo-bootstrap-carousel-design.php:31
+msgid "Animation Style"
+msgstr ""
+
+#: admin/partials/settings/neo-bootstrap-carousel-design.php:51
+msgid ""
+"Pick an animation style to enable animations for caption. To disable "
+"animations, choose the None option."
+msgstr ""
+
+#: admin/partials/settings/neo-bootstrap-carousel-general.php:20
+#: admin/partials/settings/neo-bootstrap-carousel-general.php:71
+#: includes/admin/class-neo-bootstrap-carousel-welcome.php:84
+msgid "General Settings"
+msgstr ""
+
+#: admin/partials/settings/neo-bootstrap-carousel-general.php:27
+msgid "Content"
+msgstr ""
+
+#: admin/partials/settings/neo-bootstrap-carousel-general.php:31
+msgid "Show Caption"
+msgstr ""
+
+#: admin/partials/settings/neo-bootstrap-carousel-general.php:36
+msgid "This setting will turn on and off the caption."
+msgstr ""
+
+#: admin/partials/settings/neo-bootstrap-carousel-general.php:42
+msgid "Elements"
+msgstr ""
+
+#: admin/partials/settings/neo-bootstrap-carousel-general.php:46
+msgid "Show Arrows"
+msgstr ""
+
+#: admin/partials/settings/neo-bootstrap-carousel-general.php:51
+msgid "This setting will turn on and off the navigation arrows."
+msgstr ""
+
+#: admin/partials/settings/neo-bootstrap-carousel-general.php:56
+msgid "Show Controls"
+msgstr ""
+
+#: admin/partials/settings/neo-bootstrap-carousel-general.php:61
+msgid ""
+"This setting will turn on and off the circle buttons at the bottom of the "
+"slider."
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:63
+msgid "Note: Overall code improvements using WordPress Coding Standards."
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:67
+msgid "Feature: Added Gutenberg Block"
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:68
+msgid "Note: Improved code."
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:71
+msgid "Note: Used CDATA inside JavaScript Tag"
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:72
+msgid ""
+"Fix: Resolve caption keep showing on slider even when it is disabled from "
+"settings panel"
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:75
+msgid "Tweak: Improved Admin UI/UX"
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:76
+msgid "Note: PHP 7.2 compatible"
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:77
+msgid "Fix – Hide empty elements of carousel If no slider is define"
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:80
+msgid ""
+"Fix – When hide display navigation, It hide direction arrows too which is "
+"fixed now"
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:81
+msgid ""
+"Fix – Slide URL label was wrong, when adding a new slide. It is fixed now."
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:84
+msgid ""
+"Fix – Resolved plugin carousel height conflict with Bootstrap based themes."
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:87
+msgid "Feature – You can add 3 recent posts"
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:88
+msgid ""
+"Feature – Added a link field in media slides to link slides to internal/"
+"external pages/posts."
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:89
+msgid "Note – Structure Improvement."
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:90
+msgid "Note – CSS Improvement for better loading speed."
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:91
+msgid "Note – At activation hook, defined the default settings of the plugin"
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:92
+msgid "Note – Removed pause slide"
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:95
+msgid "Note – Security implemented."
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:96
+msgid "Fix – Resolved Delete Slide bug"
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:99
+msgid "Feature - Added Slide Overlay with Opacity Control Attribute"
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:100
+msgid "Tweak - Complete structure revised."
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:101
+msgid "Fix - Resolved the unsaved title & description content bug."
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:104
+msgid ""
+"Fix - Undefined variable version and plugin name in class class-neo-"
+"bootstrap-carousel-shortcode.php"
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:107
+msgid "Feature - Added More Animations to Caption & Description"
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:110
+msgid "Feature - Added Animations to Caption & Description"
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:111
+msgid "Tweak - Changed Slider Content Area Layout at Admin Panel"
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-changelog.php:114
+msgid "Initial version"
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-settings.php:138
+msgid "Settings saved."
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-welcome.php:73
+msgid "Add New Slider"
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-welcome.php:75
+msgid ""
+"To add a new slider on your site, please click below to go to New Slider "
+"panel."
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-welcome.php:77
+msgid "New Slider"
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-welcome.php:80
+msgid "Configure General Settings"
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-welcome.php:82
+msgid ""
+"To configure general settings of the plugin, please click below to go to "
+"General settings panel."
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-welcome.php:87
+msgid "Configure Design Settings"
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-welcome.php:89
+msgid ""
+"To configure design settings of the plugin, please click below to go to "
+"Design settings panel."
+msgstr ""
+
+#: includes/admin/class-neo-bootstrap-carousel-welcome.php:97
+msgid "Mohsin Rafique"
+msgstr ""
+
+#: includes/admin/settings/class-neo-bootstrap-carousel-advanced.php:53
+msgid ""
+"<i class=\"neo-bootstrap-carousel-admin-icon-settings-1\"></"
+"i><span>Advanced</span>"
+msgstr ""
+
+#: includes/admin/settings/class-neo-bootstrap-carousel-design.php:63
+msgid ""
+"<i class=\"neo-bootstrap-carousel-admin-icon-settings-1\"></i><span>Design</"
+"span>"
+msgstr ""
+
+#: includes/admin/settings/class-neo-bootstrap-carousel-design.php:81
+msgid "Attention Seekers"
+msgstr ""
+
+#: includes/admin/settings/class-neo-bootstrap-carousel-design.php:82
+msgid "Bounce"
+msgstr ""
+
+#: includes/admin/settings/class-neo-bootstrap-carousel-design.php:83
+msgid "Flash"
+msgstr ""
+
+#: includes/admin/settings/class-neo-bootstrap-carousel-design.php:84
+msgid "Pulse"
+msgstr ""
+
+#: includes/admin/settings/class-neo-bootstrap-carousel-design.php:85
+msgid "Rubber Band"
+msgstr ""
+
+#: includes/admin/settings/class-neo-bootstrap-carousel-design.php:86
+msgid "Shake"
+msgstr ""
+
+#: includes/admin/settings/class-neo-bootstrap-carousel-design.php:87
+msgid "Swing"
+msgstr ""
+
+#: includes/admin/settings/class-neo-bootstrap-carousel-design.php:88
+msgid "Tada"
+msgstr ""
+
+#: includes/admin/settings/class-neo-bootstrap-carousel-design.php:89
+msgid "Wobble"
+msgstr ""
+
+#: includes/admin/settings/class-neo-bootstrap-carousel-design.php:90
+msgid "Jello"
+msgstr ""
+
+#: includes/admin/settings/class-neo-bootstrap-carousel-general.php:53
+msgid ""
+"<i class=\"neo-bootstrap-carousel-admin-icon-settings-1\"></i><span>General</"
+"span>"
+msgstr ""
+
+#: includes/class-neo-bootstrap-carousel-post-type.php:64
+msgid "Slider"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+#: includes/class-neo-bootstrap-carousel-post-type.php:71
+msgid "NEO Bootstrap Carousel"
+msgstr ""
+
+#: includes/class-neo-bootstrap-carousel-post-type.php:74
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: includes/class-neo-bootstrap-carousel-post-type.php:77
+msgid "Add New"
+msgstr ""
+
+#: includes/class-neo-bootstrap-carousel-post-type.php:80
+#, php-format
+msgid "Add %s"
+msgstr ""
+
+#: includes/class-neo-bootstrap-carousel-post-type.php:83
+msgid "Edit"
+msgstr ""
+
+#: includes/class-neo-bootstrap-carousel-post-type.php:86
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: includes/class-neo-bootstrap-carousel-post-type.php:91
+#, php-format
+msgid "New %s"
+msgstr ""
+
+#: includes/class-neo-bootstrap-carousel-post-type.php:96
+#: includes/class-neo-bootstrap-carousel-post-type.php:101
+#, php-format
+msgid "View %s"
+msgstr ""
+
+#: includes/class-neo-bootstrap-carousel-post-type.php:106
+#, php-format
+msgid "Search %s"
+msgstr ""
+
+#: includes/class-neo-bootstrap-carousel-post-type.php:111
+#, php-format
+msgid "No %s found"
+msgstr ""
+
+#: includes/class-neo-bootstrap-carousel-post-type.php:116
+#, php-format
+msgid "No %s found in trash"
+msgstr ""
+
+#: includes/class-neo-bootstrap-carousel-post-type.php:121
+#, php-format
+msgid "Parent %s"
+msgstr ""
+
+#: includes/class-neo-bootstrap-carousel-post-type.php:128
+msgctxt ""
+"NEO Bootstrap Carousel permalink - resave permalinks after changing this"
+msgid "neo-carousel"
+msgstr ""
+
+#: includes/class-neo-bootstrap-carousel-post-type.php:140
+#, php-format
+msgid "This is where you can create and manage %s."
+msgstr ""
+
+#: includes/class-neo-bootstrap-carousel-post-type.php:188
+msgid "Shortcode"
+msgstr ""
+
+#: includes/class-neo-bootstrap-carousel-shortcode.php:153
+msgid "How to Use"
+msgstr ""
+
+#: includes/class-neo-bootstrap-carousel-shortcode.php:171
+msgid ""
+"To display your slider, add the following shortcode (in violet) to your "
+"page. If adding the slider to your theme files, additionally include the "
+"surrounding PHP function (in gray). "
+msgstr ""
+
+#: public/partials/neo-bootstrap-carousel-public-display.php:59
+msgid "Read More"
+msgstr ""
+
+#: public/partials/neo-bootstrap-carousel-public-display.php:75
+msgid "Previous"
+msgstr ""
+
+#: public/partials/neo-bootstrap-carousel-public-display.php:79
+msgid "Next"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org/plugins/neo-bootstrap-carousel/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"A clean, simple & robust implementation of the Twitter Bootstrap Carousel in "
+"WordPress site in elegant way."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "PixelsPress, Mohsin Rafique"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://pixelspress.com"
+msgstr ""
